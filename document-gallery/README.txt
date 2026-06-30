@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/donate/?business=EE5LWRLG933EN&no_recurring=
 Tags: attachments, library, documents, word, pdf
 Requires at least: 6.1
 Tested up to: 6.9
-Stable tag: 5.1.0
+Stable tag: 5.1.1
 Requires PHP: 5.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -525,6 +525,10 @@ Note that the display inherits styling from your active theme.
 To see a list of features planned for the future as well as to propose your own
 ideas for future Document Gallery development, take a look at our
 [issue tracker](https://github.com/thenadz/document-gallery/issues).
+
+## 5.1.1
+* **Bug Fix:** Address Cross-Site Scripting security vulnerability, identified by
+João Ramos Maciel with WPScan.
 
 = 5.1.0 =
 * **Feature:** Restores support for the classic editor which was removed in 5.0.

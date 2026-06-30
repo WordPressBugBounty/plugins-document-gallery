@@ -101,7 +101,7 @@ class DG_GallerySanitization {
         $ret = DG_Util::toBool( $value );
 
         if ( is_null( $ret ) ) {
-            $err = sprintf( self::$binary_err, 'attachment_pg', 'true', 'false', $value );
+            $err = sprintf( self::$binary_err, 'attachment_pg', 'true', 'false', esc_html( $value ) );
         }
 
         return $ret;
@@ -131,7 +131,7 @@ class DG_GallerySanitization {
         $ret = DG_Util::toBool( $value );
 
         if ( is_null( $ret ) ) {
-            $err = sprintf( self::$binary_err, 'descriptions', 'true', 'false', $value );
+            $err = sprintf( self::$binary_err, 'descriptions', 'true', 'false', esc_html( $value ) );
         }
 
         return $ret;
@@ -161,7 +161,7 @@ class DG_GallerySanitization {
         $ret = DG_Util::toBool( $value );
 
         if ( is_null( $ret ) ) {
-            $err = sprintf( self::$binary_err, 'fancy', 'true', 'false', $value );
+            $err = sprintf( self::$binary_err, 'fancy', 'true', 'false', esc_html( $value ) );
         }
 
         return $ret;
@@ -225,7 +225,7 @@ class DG_GallerySanitization {
         $ret = DG_Util::toBool( $value );
 
         if ( is_null( $ret ) ) {
-            $err = sprintf( self::$binary_err, 'include_children', 'true', 'false', $value );
+            $err = sprintf( self::$binary_err, 'include_children', 'true', 'false', esc_html( $value ) );
         }
 
         return $ret;
@@ -275,7 +275,7 @@ class DG_GallerySanitization {
         $ret = DG_Util::toBool( $value );
 
         if ( is_null( $ret ) ) {
-            $err = sprintf( self::$binary_err, 'new_window', 'true', 'false', $value );
+            $err = sprintf( self::$binary_err, 'new_window', 'true', 'false', esc_html( $value ) );
         }
 
         return $ret;
@@ -293,7 +293,7 @@ class DG_GallerySanitization {
         $ret = strtoupper( $value );
 
         if ( ! in_array( $ret, self::getOrderOptions() ) ) {
-            $err = sprintf( self::$binary_err, 'order', 'ASC', 'DESC', $value );
+            $err = sprintf( self::$binary_err, 'order', 'ASC', 'DESC', esc_html( $value ) );
             $ret = null;
         }
 
@@ -319,7 +319,7 @@ class DG_GallerySanitization {
         $ret = ( 'ID' === strtoupper( $value ) ) ? 'ID' : strtolower( $value );
 
         if ( ! in_array( $ret, self::getOrderbyOptions() ) ) {
-            $err = sprintf( self::$unary_err, 'orderby', $value );
+            $err = sprintf( self::$unary_err, 'orderby', esc_html( $value ) );
             $ret = null;
         }
 
@@ -358,7 +358,7 @@ class DG_GallerySanitization {
         $ret = DG_Util::toBool( $value );
 
         if ( is_null( $ret ) ) {
-            $err = sprintf( self::$binary_err, 'paginate', 'true', 'false', $value );
+            $err = sprintf( self::$binary_err, 'paginate', 'true', 'false', esc_html( $value ) );
         }
 
         return $ret;
@@ -377,7 +377,7 @@ class DG_GallerySanitization {
         $ret = reset( $ret );
 
         if ( $ret === false ) {
-            $err = sprintf( self::$unary_err, 'post_status', $value );
+            $err = sprintf( self::$unary_err, 'post_status', esc_html( $value ) );
         }
 
         return $ret;
@@ -410,7 +410,7 @@ class DG_GallerySanitization {
         $ret = reset( $ret );
 
         if ( $ret === false ) {
-            $err = sprintf( self::$unary_err, 'post_type', $value );
+            $err = sprintf( self::$unary_err, 'post_type', esc_html( $value ) );
         }
 
         return $ret;
@@ -442,7 +442,7 @@ class DG_GallerySanitization {
         $ret = strtoupper( $value );
 
         if ( ! in_array( $ret, self::getRelationOptions() ) ) {
-            $err = sprintf( self::$binary_err, 'relation', 'AND', 'OR', $value );
+            $err = sprintf( self::$binary_err, 'relation', 'AND', 'OR', esc_html( $value ) );
             $ret = null;
         }
 
@@ -487,7 +487,7 @@ class DG_GallerySanitization {
         $ret = strtoupper( $operator );
 
         if ( ! in_array( $ret, self::getOperatorOptions() ) ) {
-            $err = sprintf( self::$binary_err, 'IN", "NOT IN", "OR', 'AND', $operator );
+            $err = sprintf( self::$binary_err, 'IN", "NOT IN", "OR', 'AND', esc_html( $operator ) );
             $ret = null;
         } else if ( $ret === 'OR' ) {
             $ret = 'IN';

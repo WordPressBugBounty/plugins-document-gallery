@@ -404,7 +404,7 @@ class DG_Gallery {
 			if ( DG_Util::startsWith( $taxon, 'tax_' ) && ( $tmp = substr( $taxon, 4 ) ) && taxonomy_exists( $tmp ) ) {
 				$taxon = $tmp;
 			} else {
-				$this->errs[] = sprintf( DG_GallerySanitization::getUnaryErr(), 'taxon', $taxon );
+				$this->errs[] = sprintf( DG_GallerySanitization::getUnaryErr(), 'taxon', esc_html( $taxon ) );
 				$valid        = false;
 			}
 		}
@@ -421,7 +421,7 @@ class DG_Gallery {
 					$ret[] = $term->{$x};
 				} else {
 					$this->errs[] = sprintf( __( '%s is not a valid term slug/name in %s.',
-						'document-gallery' ), $ident, $taxon );
+						'document-gallery' ), esc_html( $ident ), esc_html( $taxon ) );
 				}
 			}
 		}

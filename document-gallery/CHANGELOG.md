@@ -1,5 +1,8 @@
 # Changelog
 
+## 5.1.1
+* **Bug Fix:** Address Cross-Site Scripting security vulnerability, identified by João Ramos Maciel with WPScan.
+
 ## 5.1.0
 * **Feature:** Restores support for the classic editor which was removed in 5.0.
   Don't worry - Block Editor support remains as well!
